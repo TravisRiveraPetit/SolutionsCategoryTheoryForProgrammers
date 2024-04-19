@@ -25,7 +25,7 @@ print(compose(f, g)('hello world'))
 
 
 #3: Write a program that tries to test that your composition function respects identity.
-def is_identity(f: Callable[[A], B], test_cases: List[A]) -> bool:
+def is_identity(f: Callable[[A], A], test_cases: List[A]):
     for x in test_cases:
         if f(x) != x:
             return False
@@ -43,4 +43,4 @@ print(is_identity(lambda x: x, [1,2,3,4]))
 #6: When is a directed graph a category?
 # Let G = (V, E) be a directed graph.
 # G is a category if forall v in V we have (v, v) in E. (i.e. the graph is reflexive) and if
-# for all u, v, w in V: if (u, v) in E then (v, w) in E (i.e. the graph is transitive)
+# for all u, v, w in V: if (u, v) in E and (v, w) in E then (u, w) in E (i.e. the graph is transitive)
